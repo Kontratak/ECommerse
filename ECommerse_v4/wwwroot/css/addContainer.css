@@ -1,0 +1,81 @@
+﻿.tv {
+    padding: 1rem;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    border-left: 0 solid #00ff99;
+    transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
+}
+
+    .tv:hover {
+        padding-left: 0.5rem;
+        border-left: 0.5rem solid #00ff99;
+    }
+
+    .tv > :first-child {
+        margin-top: 0;
+    }
+
+    .tv > :last-child {
+        margin-bottom: 0;
+    }
+
+
+.close {
+    position: inherit;
+    right: 25px;
+    top: 15px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+}
+
+    .close:hover {
+        opacity: 1;
+    }
+
+    .close:before, .close:after {
+        position: absolute;
+        left: 15px;
+        content: ' ';
+        height: 33px;
+        width: 2px;
+        background-color: #333;
+    }
+
+    .close:before {
+        transform: rotate(45deg);
+    }
+
+    .close:after {
+        transform: rotate(-45deg);
+    }
+
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+}
+
+.img-list{
+    width:250px;
+}
+
+.label {
+    max-width: 200px;
+    padding: 5px;
+    position: relative;
+    z-index:1;
+}
+
+    .label:after {
+        position: absolute;
+        right: -3px;
+        top: 4px;
+        color: red;
+        width: 10px;
+        display: inline-block;
+    }

@@ -1,0 +1,82 @@
+﻿@model ECommerse_v4.Models.Category
+
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section Head{
+    <link href="~/lib/image_picker/css/image-picker.css" rel="stylesheet" />
+    <link href="~/css/addContainer.css" rel="stylesheet" />
+}
+
+
+
+<h1>CreateProduct</h1>
+
+<h4>Product</h4>
+<hr />
+
+<div class="row">
+    <select class="picker show-labels" id="picker" style="display:none">
+    </select>
+    <ul class="thumbnails image_picker_selector">
+    </ul>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <input type="button" id="Create" value="Create" class="btn btn-primary" />
+        <button type="button" class="btn btn-primary" id="addProp">Add Property</button>
+        <button type="button" class="btn btn-primary" id="selectImage">Add Image</button>
+        <input id="file-input" type="file" style="display: none;" accept="image/png, image/gif, image/jpeg, image/jpg" multiple />
+        <form>
+            <div class="form-group none">
+                <label class="control-label">Name</label>
+                <input id="Name_name" class="form-control propertiesname" value="Name" disabled />
+                <input id="Name_val" class="form-control propertiesvalue" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Price</label>
+                <input id="Price_name" class="form-control propertiesname" value="Price" disabled />
+                <input id="Price_val" type="number" class="form-control propertiesvalue" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Description</label>
+                <input id="Description_name" class="form-control propertiesname" value="Description" disabled />
+                <input id="Description_val" class="form-control propertiesvalue" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Brand</label>
+                <input id="Brand_name" class="form-control propertiesname" value="Brand" disabled />
+                <input id="Brand_val" class="form-control propertiesvalue" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Category</label>
+                <select class="form-control" id="category_select"></select>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Sub Category</label>
+                <select class="form-control" id="sub_category_select"></select>
+                <span class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <form class="props">
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+   @*<script src="~/lib/image_picker/js/image-picker.js"></script>*@
+    <script src="~/js/addProduct.js"></script>
+}
+

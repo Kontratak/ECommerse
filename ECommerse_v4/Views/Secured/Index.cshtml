@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Microsoft.AspNetCore.Authentication
+
+<a asp-controller="Secured" asp-action="CreateRole" class="btn btn-danger">Create Role</a>
+<a asp-controller="Secured" asp-action="CreateSuperUser" class="btn btn-danger">Create Super User</a>
+<a asp-controller="Secured" asp-action="ListUsers" class="btn btn-danger">List Users</a>
+<a asp-controller="Product" asp-action="CreateProduct" class="btn btn-danger">Create Product</a>
+<a asp-controller="Category" asp-action="CreateCategory" class="btn btn-danger">Create Category</a>
+
+<h2>Claims</h2>
+
+<dl>
+    @foreach(var claim in User.Claims)
+    {
+        <dt>@claim.Type</dt>
+        <dt>@claim.Value</dt>
+    }
+</dl>
+
+<h2>Properties</h2>
+
+<dl>
+    @foreach (var prop in (await Context.AuthenticateAsync()).Properties.Items)
+    {
+        <dt>@prop.Key</dt>
+        <dt>@prop.Value</dt>
+    }
+</dl>
+
+

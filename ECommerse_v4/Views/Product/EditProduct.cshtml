@@ -1,0 +1,119 @@
+﻿@model ECommerse_v4.Models.Product
+
+@{
+    ViewData["Title"] = "EditProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@section Head{
+    <link href="~/lib/image_picker/css/image-picker.css" rel="stylesheet" />
+    <link href="~/css/addContainer.css" rel="stylesheet" />
+}
+
+
+
+<h1>Edit Product</h1>
+
+<h4>Product</h4>
+<hr />
+
+<div class="row">
+    <select class="picker show-labels" id="picker" style="display:none">
+        @for (int i = 0; i < Model.images.Count; i++)
+        {
+        <option id="img_select_@i" data-img-src="@Model.images[i].path" data-img-alt="page_@i" value="@i">@Model.images[i].name</option>
+        }
+    </select>
+    <ul class="thumbnails image_picker_selector">
+        @for (int i = 0; i < Model.images.Count; i++)
+        {
+        <li id="img_li_@i" class="img-list">
+            <input type="button" id="img_remove_@i" class="close" onclick="removeImg(@Model.images[i])" value="X" />
+            @if (Model.properties[0].Value[0] == Model.images[i].path)
+            {
+                <div class="thumbnail selected" id="thumbnail_@i" onclick="onImageSelect(@i)">
+                    <label class="label truncate">@Model.images[i]</label>
+                    <img class="image_picker_image" src="@Model.images[i].path" alt="@Model.images[i].name" width="236" height="236">
+                </div>
+            }
+            else
+            {
+                <div class="thumbnail" id="thumbnail_@i" onclick="onImageSelect(@i)">
+                    <label class="label truncate">@Model.images[i]</label>
+                    <img class="image_picker_image" src="@Model.images[i].path" alt="@Model.images[i].name" width="236" height="236">
+                </div>
+            }
+        </li>
+        }
+    </ul>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <input type="button" id="Create" value="Update" class="btn btn-primary" />
+        <button type="button" class="btn btn-primary" id="addProp">Add Property</button>
+        <button type="button" class="btn btn-primary" id="selectImage">Add Image</button>
+        <input id="file-input" type="file" style="display: none;" accept="image/png, image/gif, image/jpeg, image/jpg" multiple />
+        <form>
+            <div class="form-group none">
+                <label class="control-label">Name</label>
+                <input id="Name_name" class="form-control propertiesname" value="Name" disabled />
+                <input id="Name_val" class="form-control propertiesvalue" value="@Model.properties[1].Value[0]"/>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Price</label>
+                <input id="Price_name" class="form-control propertiesname" value="Price" disabled />
+                <input id="Price_val" type="number" class="form-control propertiesvalue" value="@Model.properties[2].Value[0]"/>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Description</label>
+                <input id="Description_name" class="form-control propertiesname" value="Description" disabled />
+                <input id="Description_val" class="form-control propertiesvalue" value="@Model.properties[3].Value[0]"/>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Brand</label>
+                <input id="Brand_name" class="form-control propertiesname" value="Brand" disabled />
+                <input id="Brand_val" class="form-control propertiesvalue" value="@Model.properties[4].Value[0]"/>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Category</label>
+                <select class="form-control" id="category_select"></select>
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Sub Category</label>
+                <select class="form-control" id="sub_category_select"></select>
+                <span class="text-danger"></span>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <form class="props">
+            @for(int i = 5; i < Model.properties.Count; i++)
+            {
+                <div class="form-group">
+                    <div class="tv" id="tvprop_@i">
+                        <input type="button" id="prop_remove_@i" class="close" onclick="removeProp(@i)" value="X" />
+                        <label class="control-label" id="prop_labelname_@i">Property Name</label>
+                        <input id="prop_name_@i" class="form-control propertiesname" value="@Model.properties[i].Name"/>
+                        <label class="control-label" id="prop_labelvalue_@i">Property Value</label>
+                        <input id="prop_val_@i" class="form-control propertiesvalue" value="@Model.properties[i].Value[0]" placeholder"Use Comma To Seperate Multiple Values"/>
+                        <span class="text-danger" id="prop_span_@i"></span>
+                    </div>
+                </div>
+            }
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+    @*<script src="~/lib/image_picker/js/image-picker.js"></script>*@
+    <script src="~/js/addProduct.js"></script>
+}
+

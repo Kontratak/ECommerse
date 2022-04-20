@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ECommerse_v4.Models.ProductDetails>
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.product.id)
+            </th>
+            <th>
+                Category
+            </th>
+            <th>
+                Sub Category
+            </th>
+            <th>
+                Product Name
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.product.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.category.properties[0].value[0])
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.subCategory.properties[0].value[0])
+            </td>
+            <td>
+                @item.product.properties[1].Value[0]
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditProduct", new { id=item.product.id }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

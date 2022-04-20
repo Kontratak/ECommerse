@@ -1,0 +1,56 @@
+﻿@model IEnumerable<ECommerse_v4.Models.Product>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head{ 
+    <link href="~/css/listProduct.css" rel="stylesheet" />
+}
+<div class="row p-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <div class="row">
+            @foreach (Product mod in Model)
+            {
+                <div class="col-ulm col-lm col-msm col-sm-6 pb-3" onclick=goTo("@mod.id") style="cursor:pointer">
+                        <div class="card divt">
+                            <img class="card-img-top p-3" src="@mod.properties[0].Value[0]" height="240" />
+                            <div class="card-header">
+                                <p class="card-title module line-clamp">@mod.properties[1].Value[0]</p>
+                            </div>
+                            <div class="card-body">
+                                @*<p class="card-text text-truncate">@mod.properties[3].Value[0]</p>*@
+                                <h5 class="card-footer text-truncate">@mod.properties[2].Value[0] ₺</h5>
+                            </div>
+                            @*<ul class="list-group list-group-flush">
+                @for (int index = 3; index < mod.properties.Count; index++)
+                {
+                <li class="list-group-item">
+                    <b>@mod.properties[index].Name : </b>
+                    @foreach (var val in mod.properties[index].Value)
+                    {
+                        @val
+                    }
+                </li>
+                }
+            </ul>*@
+                        </div>
+                </div>
+            }
+        </div>
+    </div>
+   
+</div>
+
+
+@section Scripts{
+    <script>
+        function goTo(id) {
+            location.href = "/Product/Details?id="+id;
+        }
+
+    </script>
+    
+}

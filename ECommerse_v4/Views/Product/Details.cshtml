@@ -1,0 +1,440 @@
+﻿@model ECommerse_v4.Models.ProductDetails
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head{
+    <link href="~/css/listProduct.css" rel="stylesheet" />
+    <link href="~/lib/splide/css/splide.min.css" rel="stylesheet" />
+    <link href="~/css/responsive.css" rel="stylesheet" />
+    <link href="~/css/main.css" rel="stylesheet" />
+}
+<div class="row p-4">
+    <div class="col-md-3">
+        <div class="left-sidebar">
+            <h2>Category</h2>
+            <div class="panel-group category-products" id="accordian">
+                <!--category-productsr-->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                Sportswear
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="sportswear" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul>
+                                <li><a href="">Nike </a></li>
+                                <li><a href="">Under Armour </a></li>
+                                <li><a href="">Adidas </a></li>
+                                <li><a href="">Puma</a></li>
+                                <li><a href="">ASICS </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                Mens
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="mens" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul>
+                                <li><a href="">Fendi</a></li>
+                                <li><a href="">Guess</a></li>
+                                <li><a href="">Valentino</a></li>
+                                <li><a href="">Dior</a></li>
+                                <li><a href="">Versace</a></li>
+                                <li><a href="">Armani</a></li>
+                                <li><a href="">Prada</a></li>
+                                <li><a href="">Dolce and Gabbana</a></li>
+                                <li><a href="">Chanel</a></li>
+                                <li><a href="">Gucci</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                Womens
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="womens" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul>
+                                <li><a href="">Fendi</a></li>
+                                <li><a href="">Guess</a></li>
+                                <li><a href="">Valentino</a></li>
+                                <li><a href="">Dior</a></li>
+                                <li><a href="">Versace</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="#">Kids</a></h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="#">Fashion</a></h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="#">Households</a></h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="#">Interiors</a></h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="#">Clothing</a></h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="#">Bags</a></h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><a href="#">Shoes</a></h4>
+                    </div>
+                </div>
+            </div><!--/category-products-->
+
+            <div class="brands_products">
+                <!--brands_products-->
+                <h2>Brands</h2>
+                <div class="brands-name">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href=""> <span class="pull-right">(50)</span>Acne</a></li>
+                        <li><a href=""> <span class="pull-right">(56)</span>Grüne Erde</a></li>
+                        <li><a href=""> <span class="pull-right">(27)</span>Albiro</a></li>
+                        <li><a href=""> <span class="pull-right">(32)</span>Ronhill</a></li>
+                        <li><a href=""> <span class="pull-right">(5)</span>Oddmolly</a></li>
+                        <li><a href=""> <span class="pull-right">(9)</span>Boudestijn</a></li>
+                        <li><a href=""> <span class="pull-right">(4)</span>Rösch creative culture</a></li>
+                    </ul>
+                </div>
+            </div><!--/brands_products-->
+
+            <div class="price-range">
+                <!--price-range-->
+                <h2>Price Range</h2>
+                <div class="well">
+                    <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
+                    <b>$ 0</b> <b class="pull-right">$ 600</b>
+                </div>
+            </div><!--/price-range-->
+
+            <div class="shipping text-center">
+                <!--shipping-->
+                <img src="images/home/shipping.jpg" alt="" />
+            </div><!--/shipping-->
+
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="product-details">
+            <div class="row">
+
+                <div class="col-md-5">
+                    <div class="view-product">
+                        <img id="mainImage" src="@Model.product.properties[0].Value[0]" alt="">
+                        <h3>ZOOM</h3>
+                    </div>
+                    <div id="similar-product" class="carousel slide" data-ride="carousel">
+                        <div class="splide">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    @foreach (var image in Model.product.images)
+                                    {
+                                        <li class="splide__slide" style="cursor:pointer" onclick="changeMain('@image.path.Replace("\\","\\\\")')"><img src="@image.path" alt="" width="150" height="200"></li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-7">
+                    <div class="product-information">
+                        <!--/product-information-->
+                        <h2>@Model.product.properties[1].Value[0]</h2>
+                        <p>Web ID: 1089772</p>
+                        <span>
+                            <span>@Model.product.properties[2].Value[0] ₺</span>
+                            <label>Quantity:</label>
+                            <input type="text" value="1">
+                            <button type="button" class="btn btn-fefault cart">
+                                <i class="fa fa-shopping-cart"></i>
+                                Add to cart
+                            </button>
+                        </span>
+                        <p><b>Availability:</b> In Stock</p>
+                        <p><b>Condition:</b> New</p>
+                        <p><b>Brand:</b> @Model.product.properties[4].Value[0]</p>
+                        <p><b>Company:</b><a href="/Company/Details?id=@Model.company.id"></a>@Model.company.name</p>
+                        <a href=""><img src="images/product-details/share.png" class="share img-responsive" alt=""></a>
+                    </div><!--/product-information-->
+                </div>
+            </div>
+            <!--product-details-->
+        </div><!--/product-details-->
+
+        <div class="category-tab shop-details-tab">
+            <!--category-tab-->
+            <div class="col-sm-12">
+                <ul class="nav nav-tabs" id="bottomNav">
+                    <li class="active" onclick="tabOnClick(this)"><a href="#details" data-toggle="tab" class="p-3">Details</a></li>
+                    <li onclick="tabOnClick(this)"><a href="#companyprofile" data-toggle="tab" class="p-3">Company Profile</a></li>
+                    <li onclick="tabOnClick(this)"><a href="#tag" data-toggle="tab" class="p-3">Tag</a></li>
+                    <li onclick="tabOnClick(this)"><a href="#reviews" data-toggle="tab" class="p-3">Comments (@Model.product.reviews.Count)</a></li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane fade active show" id="details">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-group list-group-flush">
+                                @for (int index = 3; index < @Model.product.properties.Count; index++)
+                                {
+                                    <li class="list-group-item">
+                                        <b>@Model.product.properties[index].Name : </b>
+                                        @foreach (var val in @Model.product.properties[index].Value)
+                                        {
+                                            @val
+                                        }
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="companyprofile">
+                    <div class="col-sm-3">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="/img/doldur.svg" alt="">
+                                    <h2>@Model.company.name</h2>
+                                    <a href="/Company/Details?id=@Model.company.id"><i class="fa fa-user"></i>Go To Company Page</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="tag">
+                    <div class="col-sm-3">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="images/home/gallery1.jpg" alt="">
+                                    <h2>$56</h2>
+                                    <p>Easy Polo Black Edition</p>
+                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="images/home/gallery2.jpg" alt="">
+                                    <h2>$56</h2>
+                                    <p>Easy Polo Black Edition</p>
+                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="images/home/gallery3.jpg" alt="">
+                                    <h2>$56</h2>
+                                    <p>Easy Polo Black Edition</p>
+                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="images/home/gallery4.jpg" alt="">
+                                    <h2>$56</h2>
+                                    <p>Easy Polo Black Edition</p>
+                                    <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade active in" id="reviews">
+                    <div class="col-sm-12">
+                        <p><b>Write Your Comment</b></p>
+                        @if (ViewBag.isLoggedIn)
+                        {
+                            <form asp-action="AddReview">
+                                <textarea name="Description"></textarea>
+                                <input type="text" name="Id" value="@Model.product.id" hidden />
+                                <div class="form-group">
+                                    <input type="submit" value="Submit" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        }
+                        else
+                        {
+                            <p>Please Login in Order to Comment</p>
+                        }
+                        @foreach (var item in Model.product.reviews)
+                        {
+                            <ul>
+                                <li><a href=""><i class="fa fa-user"></i>@item.User.Name</a></li>
+                                <li><a href=""><i class="fa fa-clock-o"></i>:@item.Time.Hour:@item.Time.Minute</a></li>
+                                <li><a href=""><i class="fa fa-calendar-o"></i>@item.Time.ToString("dd'/'MM'/'yyyy")</a></li>
+                            </ul>
+                            <p>@item.Description</p>
+                        }
+
+                    </div>
+                </div>
+
+            </div>
+        </div><!--/category-tab-->
+
+        <div class="recommended_items">
+            <!--recommended_items-->
+            <h2 class="title text-center">recommended items</h2>
+
+            <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="images/home/recommend1.jpg" alt="">
+                                        <h2>$56</h2>
+                                        <p>Easy Polo Black Edition</p>
+                                        <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="images/home/recommend2.jpg" alt="">
+                                        <h2>$56</h2>
+                                        <p>Easy Polo Black Edition</p>
+                                        <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="images/home/recommend3.jpg" alt="">
+                                        <h2>$56</h2>
+                                        <p>Easy Polo Black Edition</p>
+                                        <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="images/home/recommend1.jpg" alt="">
+                                        <h2>$56</h2>
+                                        <p>Easy Polo Black Edition</p>
+                                        <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="images/home/recommend2.jpg" alt="">
+                                        <h2>$56</h2>
+                                        <p>Easy Polo Black Edition</p>
+                                        <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="product-image-wrapper">
+                                <div class="single-products">
+                                    <div class="productinfo text-center">
+                                        <img src="images/home/recommend3.jpg" alt="">
+                                        <h2>$56</h2>
+                                        <p>Easy Polo Black Edition</p>
+                                        <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@section Scripts{
+    <script src="~/lib/splide/js/splide.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/details.js"></script>
+    <script>
+        function tabOnClick(item) {
+            $('#bottomNav li.active').removeClass();
+            $(item).addClass('active');
+        }
+    </script>
+}
